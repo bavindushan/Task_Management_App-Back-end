@@ -1,16 +1,17 @@
 package edu.icet.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import edu.icet.utill.TaskStatus;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class Task {
     private Integer id;
+    private Integer userId;
     private String description;
     private String file;
-    private Integer employeeId;
-    private String status;
+    private TaskStatus status;
 }
