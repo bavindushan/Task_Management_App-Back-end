@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("/user")
@@ -21,7 +23,13 @@ public class UserController {
     }
 
     @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
     public void updateUser(@RequestBody User user){
         services.updateUser(user);
+    }
+
+    @GetMapping("/get-all")
+    public List<User> getAll(){
+        return services.getAll();
     }
 }
