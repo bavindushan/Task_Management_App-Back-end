@@ -19,4 +19,9 @@ public class UserController {
     public void addUser(@RequestBody User user){
         services.addUser(user);
     }
+
+    @PutMapping("/update")
+    public void updateUser(@RequestBody User user){
+        services.updateUser(user);
+    }
 }

@@ -17,9 +17,12 @@ public class TaskEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToMany
-    @JoinColumn(name = "userId",referencedColumnName = "id",nullable = false)
-    private UserEntity user;
+//    @ManyToOne
+//    @JoinColumn(name = "userId",referencedColumnName = "id",nullable = false)
+//    private UserEntity user;
+
+    @Column(nullable = false)
+    private Integer userId;
 
     private String description;
     private String file;
